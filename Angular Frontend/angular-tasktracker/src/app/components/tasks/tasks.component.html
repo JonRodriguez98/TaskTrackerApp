@@ -1,0 +1,5 @@
+<!--this component takes care of the actual task boxes, imports the task items-->
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<!--loops through the task interface array that was imported and creates a task component for each task in the interface-->
+<app-task-item *ngFor="let task of tasks" [task]="task" (onDeleteTask)="deleteTask(task)"
+    (onToggleReminder)="toggleReminder(task)"></app-task-item>
